@@ -15,6 +15,10 @@ public class Constants {
     public static DisplayImageOptions options;
     public static final int SELECT_PHOTO = 1;
     public static final int CAMERA = 2;
+    public static boolean appendNotificationMessages = true;
+    public static final int NOTIFICATION_ID = 100;
+    public static final int NOTIFICATION_ID_BIG_IMAGE = 101;
+
     public static String getStringImage(Bitmap bmp){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
@@ -85,6 +89,7 @@ public class Constants {
         public static  final String AUTHORIZE = HOST + "users/auth";
         public static  final String SEND_CODE = HOST + "users/activation";
         public static  final String UPDATE = HOST + "users/update";
+        public static  final String LOGOUT = HOST + "users/logout";
         public static  final String UPLOAD = HOST + "files/upload";
     }
 }

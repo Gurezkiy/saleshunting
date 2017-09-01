@@ -31,6 +31,10 @@ public class AppController extends Application {
         String device = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         return device;
     }
+    public SessionManager getPrefManager(){
+        SessionManager s = new SessionManager(getApplicationContext());
+        return  s;
+    }
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -53,4 +57,5 @@ public class AppController extends Application {
             mRequestQueue.cancelAll(tag);
         }
     }
+
 }

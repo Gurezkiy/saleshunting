@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 .bitmapConfig(Bitmap.Config.RGB_565)
                 .build();
         session = new SessionManager(getApplicationContext());
+        session.setGSM("MY_NEW_GSM");
         if(session.isLoggedIn()){
             getProfile();
         }else{
@@ -238,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             }
                             case 99: {
-                                Logout();
+                                Logout(view);
                                 break;
                             }
                             default:
@@ -268,12 +270,49 @@ public class MainActivity extends AppCompatActivity {
     public static void UpdateMaterialProfile(){
         headerResult.updateProfile(profile);
     }
-    private void Logout(){
-        session.setToken("");
-        session.setLogin(false);
-        Intent intent = new Intent(MainActivity.this, SigninActivity.class);
-        startActivity(intent);
-        finish();
+    private void Logout(final View view){
+        String tag_string_req = "req_logout_profile";
+        StringRequest strReq = new StringRequest(Request.Method.POST, Constants.URL.LOGOUT, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean success = jObj.getBoolean("success");
+                    if (success) {
+                        session.setToken("");
+                        session.setLogin(false);
+                        Intent intent = new Intent(MainActivity.this, SigninActivity.class);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+                        String errorMsg = jObj.getString("errormsg");
+                        Snackbar.make(view, Constants.getErrorMessage(errorMsg), Snackbar.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+
+            @Override
+            protected Map<String, String> getParams() {
+
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("token", session.getToken());
+                params.put("device_id",AppController.getInstance().getDeviceId());
+                return params;
+            }
+
+        };
+        AppController.getInstance().addToRequestQueue(strReq, tag_string_req);
     }
     private void setFragment(){
         android.support.v4.app.FragmentManager myFragmentManager = getSupportFragmentManager();

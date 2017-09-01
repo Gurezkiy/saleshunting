@@ -69,17 +69,6 @@ public class SigninActivity extends AppCompatActivity {
                                     String token = data.getString("token");
                                     if(auth){
                                         progressDialog.setMessage("Успешно!");
-                                        /*JSONObject user = data.getJSONObject("userProfile");
-                                        String id = user.getString("id");
-                                        String name = user.getString("name");
-                                        String phone = user.getString("phone");
-                                        String birthday = user.getString("birthday");
-                                        String avatar = user.getString("avatar");
-                                        String access_level = user.getString("access_level");
-                                        String pet = user.getString("pet");
-                                        String max_sale = user.getString("max_sale");
-                                        String count_sales = user.getString("count_sales");
-                                        AppController.getInstance().Profile = new User(id,name,phone,birthday,avatar,access_level,pet,max_sale,count_sales);*/
                                         session.setToken(token);
                                         session.setLogin(true);
                                         progressDialog.setMessage("Успешно!");
@@ -143,6 +132,7 @@ public class SigninActivity extends AppCompatActivity {
                             params.put("phone", input_phone.getText().toString());
                             params.put("password", input_password.getText().toString());
                             params.put("device_id",AppController.getInstance().getDeviceId());
+                            params.put("gcm_registration_id",session.getGSM());
                             return params;
                         }
 

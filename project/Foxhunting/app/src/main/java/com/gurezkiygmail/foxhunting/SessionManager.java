@@ -18,14 +18,34 @@ public class SessionManager {
     // Shared preferences file name
     private static final String PREF_NAME = "foxhuntingLogin";
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";
+    private static final String PREF_GSM = "gsmName";
     private static final String USER_TOKEN = "foxhuntingToken";
     private static final String USER_PROFIE = "foxhuntingProfile";
+    private static final String KEY_NOTIFICATIONS = "notifications";
 
     public SessionManager(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
     }
+    public void addNotification(String notification) {
+
+        // get old notifications
+        String oldNotifications = getNotifications();
+
+        if (oldNotifications != null) {
+            oldNotifications += "|" + notification;
+        } else {
+            oldNotifications = notification;
+        }
+
+        editor.putString(KEY_NOTIFICATIONS, oldNotifications);
+        editor.commit();
+    }
+    public String getNotifications() {
+        return pref.getString(KEY_NOTIFICATIONS, null);
+    }
+
     public void setToken(String _token) {
         editor.putString(USER_TOKEN, _token);
         // commit changes
@@ -43,7 +63,15 @@ public class SessionManager {
 
         Log.d(TAG, "User login session modified!");
     }
+    public void setGSM(String gsm){
+        editor.putString(PREF_GSM, gsm);
+        editor.commit();
+    }
 
+    public String getGSM(){
+        String gsm = pref.getString(PREF_GSM,"");
+        return  gsm;
+    }
     public boolean isLoggedIn(){
         String token = getToken();
         if(token.length()==0){

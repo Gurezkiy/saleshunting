@@ -351,6 +351,7 @@ public class SignupActivity extends AppCompatActivity {
                             params.put("phone", input_phone.getText().toString());
                             params.put("code", input_sms.getText().toString());
                             params.put("device_id",AppController.getInstance().getDeviceId());
+                            params.put("gcm_registration_id",session.getGSM());
                             return params;
                         }
 
