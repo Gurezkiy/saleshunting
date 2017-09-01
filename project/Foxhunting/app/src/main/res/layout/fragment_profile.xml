@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:background="@color/my_white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false">
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="11dp"
+            android:layout_marginTop="50dp"
+            app:civ_border_color="@color/colorWhite"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_image"
+            android:layout_marginBottom="11dp"
+            android:padding="5px"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/material_drawer_dark_background"
+            android:textSize="24dp" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/firstcard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/profile_name"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorWhite"
+            card:cardElevation="2dp"
+            card:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/cup"
+                        android:id="@+id/cup"
+                        android:gravity="center"
+                        />
+                    <LinearLayout
+                        android:id="@+id/cenerElem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_toRightOf="@+id/cup"
+                        android:layout_centerVertical="true">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ЛУЧШАЯ СКИДКА"
+                            android:textColor="@color/gray"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/best_sale"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/md_black_1000"
+                            android:textSize="24dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray"
+                        android:layout_margin="16dp"
+                        android:layout_toRightOf="@+id/cenerElem"
+                        android:gravity="center"
+                        android:id="@+id/borderElemCenter"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_toRightOf="@+id/borderElemCenter"
+                        android:layout_margin="16dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="СКИДОК"
+                            android:textColor="@color/gray"
+                            android:textSize="14dp"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/md_black_1000"
+                            android:textSize="24dp"
+                            android:text="0"
+                            android:id="@+id/count_sales"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cup"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="0.50"
+                    android:layout_margin="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ЛУЧШАЯ СКИДКА"
+                        android:textColor="@color/gray"
+                        android:textSize="14dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/md_black_1000"
+                        android:textSize="24dp"
+                        android:text="0"
+                        android:id="@+id/best_sale"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray"
+                    android:layout_margin="16dp"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="0.30"
+                    android:layout_margin="16dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="СКИДОК"
+                        android:textColor="@color/gray"
+                        android:textSize="14dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/md_black_1000"
+                        android:textSize="24dp"
+                        android:text="0"
+                        android:id="@+id/count_sales"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>-->
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/firstcard"
+            card:cardBackgroundColor="@color/light_grey"
+            card:cardCornerRadius="4dp"
+            card:cardElevation="0dp"
+            card:cardMaxElevation="0dp"
+            card:cardUseCompatPadding="false"
+            card:contentPadding="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/phone"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/md_black_1000" />
+
+                        <TextView
+                            android:id="@+id/settings_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="false"
+                            android:layout_below="@+id/textView"
+                            android:layout_marginBottom="16dp"
+                            android:text=""
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/gray" />
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/button_settings_phone"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/colorWhite"
+                            android:gravity="center_vertical"
+                            android:text="ИЗМЕНИТЬ"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@+id/settings_phone"
+                            android:background="@color/gray" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/name"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/md_black_1000" />
+
+                        <TextView
+                            android:id="@+id/settings_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="false"
+                            android:layout_below="@+id/textView2"
+                            android:layout_marginBottom="16dp"
+                            android:text=""
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/gray" />
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/button_settings_name"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/colorWhite"
+                            android:gravity="center_vertical"
+                            android:text="ИЗМЕНИТЬ"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@+id/settings_name"
+                            android:background="@color/gray" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/password"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/md_black_1000" />
+
+                        <TextView
+                            android:id="@+id/settings_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="false"
+                            android:layout_below="@+id/textView3"
+                            android:layout_marginBottom="16dp"
+                            android:text=""
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/gray" />
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/button_settings_password"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/colorWhite"
+                            android:gravity="center_vertical"
+                            android:text="ИЗМЕНИТЬ"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_below="@+id/settings_password"
+                            android:background="@color/gray" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/profile_session"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="@color/md_black_1000" />
+
+                        <TextView
+                            android:id="@+id/settings_session_close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="false"
+                            android:layout_below="@+id/textView4"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/settings_session_close"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/gray" />
+
+                        <android.support.v7.widget.AppCompatButton
+                            android:id="@+id/button_settings_session_close"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/colorWhite"
+                            android:gravity="center_vertical"
+                            android:text="ПРИМЕНИТЬ"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</LinearLayout>

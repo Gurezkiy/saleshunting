@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.gurezkiygmail.foxhunting.SignupActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_width="2dp"
+        app:civ_border_color="?attr/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondStep"
+        android:visibility="invisible">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="240dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/view">
+            <EditText android:id="@+id/sms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Введите код из СМС"
+                android:layout_centerVertical="true"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sendSms"
+            android:text="Отправить"
+            android:textColor="@color/colorWhite"
+            android:background="?attr/colorPrimary"
+            android:layout_alignTop="@+id/view"
+            android:layout_marginTop="68dp"
+            android:layout_alignEnd="@+id/view"
+            android:layout_alignStart="@+id/view" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstStep">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/view3">
+            <EditText android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Номер телефона"
+                android:layout_centerVertical="true"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="230dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/view2">
+            <EditText android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Дата рождения"
+                android:layout_centerVertical="true"/>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/signup"
+            android:text="Зарегистрироваться"
+            android:textColor="@color/colorWhite"
+            android:background="?attr/colorPrimary"
+            android:layout_alignTop="@+id/view2"
+            android:layout_marginTop="68dp"
+            android:layout_alignEnd="@+id/view2"
+            android:layout_alignStart="@+id/view3" />
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:id="@+id/create_account"
+            android:textColor="#ffff"
+            android:text="У меня есть аккаунт. Войти"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:layout_below="@+id/signup"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/thirdStep"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textColor="#ffff"
+            android:text="Регистрация завершена. Ваш номер телефона - это логин, а дата рождения - Ваш пароль. Пароль можно сменить в личном кабинете.\n Bлагодарим за регистрацию."
+            android:id="@+id/infoSuccess"
+            android:gravity="center"
+            android:textSize="16dp"
+            android:layout_centerHorizontal="true" />
+        <android.support.v7.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gotosignin"
+            android:text="Войти"
+            android:textColor="@color/colorWhite"
+            android:background="?attr/colorPrimary"
+            android:layout_below="@+id/infoSuccess"
+            android:layout_marginTop="68dp"
+            android:layout_alignEnd="@+id/infoSuccess"
+            android:layout_alignStart="@+id/infoSuccess"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

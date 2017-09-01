@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Sales Hunter</string>
+    <string name="hello_world">Hello world</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="welcome">Добро пожаловать</string>
+    <string name="btn_logout">Выйти</string>
+
+    <string name="drawer_item_home">Главная</string>
+    <string name="drawer_item_hunting">Охота</string>
+    <string name="drawer_item_profile">Мой профиль</string>
+    <string name="drawer_item_settings">Настройки</string>
+    <string name="drawer_item_exit">Выход</string>
+
+    <string name="phone">Номер телефона</string>
+    <string name="name">Имя</string>
+    <string name="password">Пароль</string>
+    <string name="profile_session">Открытые сессии</string>
+    <string name="settings_session_close">Закрыть все сессии кроме текущей</string>
+    <string name="settings_password_session_close">Введите пароль для закрытия сессий</string>
+
+</resources>
